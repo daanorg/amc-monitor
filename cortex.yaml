@@ -1,0 +1,22 @@
+openapi: 3.0.1
+info:
+  title: Amc Monitor
+  description: Self-hosted Discord app that watches AMC showtimes for adjacent seats and links to the seat picker when a match appears.
+  x-cortex-tag: daanorg-amc-monitor
+  x-cortex-type: service
+  x-cortex-git:
+    github:
+      alias: cortex
+      repository: daanorg/amc-monitor
+  x-cortex-owners:
+    - type: GROUP
+      name: daanorg-platform
+      provider: CORTEX
+  x-cortex-link:
+    - name: README
+      type: documentation
+      url: https://github.com/daanorg/amc-monitor#readme
+  x-cortex-custom-metadata:
+    language: python
+    processes: amc-worker, amc-discord-bot, amc-owner-notifier
+    datastore: postgresql
